@@ -1,0 +1,104 @@
+.color-black {
+  background-color: #121212;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+}
+.logo-img {
+  margin: 2rem 0 0 2rem;
+}
+nav {
+  position: relative;
+  z-index: 100;
+}
+.search-pokemon {
+  position: relative;
+  width: 100%;
+}
+.search-pokemon svg {
+  position: absolute;
+
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.search-pokemon .lup {
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 1rem 2.5rem;
+  background: #212121;
+  color: #777373;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  outline: none;
+}
+.aClaw {
+  padding: 2rem;
+}
+form .searchp {
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  margin-top: 2rem;
+  color: #ffffff;
+}
+.options-more {
+  padding: 0 2rem;
+}
+.options-more a {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  color: #cccccc;
+  text-decoration: none;
+  margin-top: 2rem;
+  display: block;
+}
+.options-more p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  color: #8b8b8b;
+  margin-top: 1rem;
+}
+.options-more h3 {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 18px;
+
+  letter-spacing: 0.1em;
+  color: #dddddd;
+}
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.social-media a {
+  margin-left: 1rem;
+}
+.footer-nav span {
+  color: #ffffff;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  margin: 1rem 0;
+}

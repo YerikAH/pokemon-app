@@ -1,0 +1,99 @@
+.status-pokemon {
+  display: grid;
+  place-items: center;
+  place-content: center;
+}
+.name-pokemon {
+  text-transform: uppercase;
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  line-height: 28px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.description-pokemon {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-top: 1rem;
+  max-width: 400px;
+  width: 100%;
+  padding: 0 2rem;
+  color: #ffffff;
+}
+.phrse-pokemon {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #89d3fc;
+  text-align: center;
+  margin-top: 1rem;
+  display: block;
+  margin-top: 2rem;
+  max-width: 350px;
+  padding: 0 2rem;
+}
+.name-status-pokemon p {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+}
+.grid-status-pokemon {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 1rem;
+  margin-top: 3rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+.name-status-pokemon-stat p {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  padding: 1rem;
+}
+.status-power,
+.status-pp {
+  width: 100%;
+  max-width: 200px;
+  position: relative;
+  height: 16px;
+  background-color: #ffffff;
+  margin: 0.7rem 0;
+  border-radius: 255px;
+}
+.completed-power,
+.completed-pp {
+  position: absolute;
+  width: 50%;
+  background-color: #89d3fc;
+  height: 16px;
+  border-radius: 255px;
+}
+.status-power {
+  margin: 1rem 0;
+}
+.status-pp {
+  margin: 1.9rem 0;
+}

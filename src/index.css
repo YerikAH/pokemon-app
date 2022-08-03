@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+/* :root {
+} */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu";
+}
+.content-grid {
+  width: 100vw;
+  background: linear-gradient(181.09deg, #1b3051 2.02%, #272939 104.92%);
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+}
+html {
+  overflow-x: hidden;
+}
+.grid-all {
+  display: grid;
+  grid-template-columns: 500px auto;
+}
