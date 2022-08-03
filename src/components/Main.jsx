@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./styles/show.css";
 import "./styles/status.css";
+import Loader from "./Loader";
 function Main({
   setColor,
   setSecondColor,
@@ -19,6 +20,7 @@ function Main({
   const [pShinyFemaleBack, setPShinyFemaleBack] = useState("");
   const [numOne, setNumOne] = useState(1);
   const [action, setAction] = useState(false);
+  const [duration, setDuration] = useState(true);
 
   const [name, setName] = useState("");
   const [descrip, setDescrip] = useState("");
@@ -37,6 +39,7 @@ function Main({
   const [search, setSearch] = useState(25);
   async function getPokemon() {
     try {
+      setDuration(false);
       let resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${search}`);
       let jsonp = await resp.json();
       let imagePokemon = jsonp.sprites;
@@ -257,12 +260,15 @@ function Main({
       }
 
       setLoader(true);
+      setDuration(true);
     } catch (error) {
       console.log(error);
     }
   }
   async function getPokemonOther(arg) {
     try {
+      //error
+      setDuration(false);
       let resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${arg}`);
       let jsonp = await resp.json();
       let imagePokemon = jsonp.sprites;
@@ -483,6 +489,7 @@ function Main({
       }
 
       setLoader(true);
+      setDuration(true);
     } catch (error) {
       console.log(error);
     }
@@ -702,6 +709,8 @@ function Main({
           </div>
         </div>
       </div>
+
+      {!duration && <Loader />}
     </>
   );
 }

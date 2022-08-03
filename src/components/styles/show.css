@@ -44,6 +44,10 @@
 .main {
   position: relative;
   z-index: 200;
-  height: 100vh;
   display: grid;
+}
+@media (min-width: 1300px) {
+  .main {
+    height: 100vh;
+  }
 }

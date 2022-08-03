@@ -85,7 +85,7 @@ form .searchp {
   color: #dddddd;
 }
 .footer-nav {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 500px;
   display: flex;
@@ -101,4 +101,9 @@ form .searchp {
   font-weight: 400;
   letter-spacing: 0.1em;
   margin: 1rem 0;
+}
+@media (min-width: 1300px) {
+  .footer-nav {
+    position: fixed;
+  }
 }
