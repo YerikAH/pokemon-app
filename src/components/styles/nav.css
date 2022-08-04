@@ -53,6 +53,11 @@ form .searchp {
   letter-spacing: 0.1em;
   margin-top: 2rem;
   color: #ffffff;
+  transition: 0.3s;
+  cursor: pointer;
+}
+form .searchp:hover {
+  filter: saturate(4);
 }
 .options-more {
   padding: 0 2rem;
@@ -80,7 +85,8 @@ form .searchp {
   font-weight: 700;
   font-size: 20px;
   line-height: 18px;
-
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
   letter-spacing: 0.1em;
   color: #dddddd;
 }
@@ -102,8 +108,72 @@ form .searchp {
   letter-spacing: 0.1em;
   margin: 1rem 0;
 }
-@media (min-width: 1300px) {
+@media (min-width: 1600px) {
   .footer-nav {
     position: fixed;
+  }
+}
+@media (max-width: 1000px) {
+  nav {
+    display: none;
+    background: #121212;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 5000;
+    overflow: auto;
+  }
+  .color-black {
+    display: none;
+  }
+  .footer-nav {
+    position: absolute;
+    margin-top: 4rem;
+    width: 100%;
+  }
+  .options-more {
+    display: none;
+  }
+}
+.button-click-nav {
+  position: fixed;
+  z-index: 1000;
+  right: 0;
+  margin: 1.6rem 2rem 1rem 0;
+}
+.button-click-nav button {
+  border: none;
+  background: transparent;
+}
+.nav-mobile {
+  position: fixed;
+  z-index: 900;
+  padding: 1rem;
+  background: #121212;
+  width: 100vw;
+}
+@media (min-width: 1000px) {
+  .button-click-nav {
+    display: none;
+  }
+  .nav-mobile {
+    display: none;
+  }
+}
+.close-search {
+  position: absolute;
+  z-index: 8000;
+  right: 0;
+  margin: 3rem;
+}
+.errorNav {
+  color: #d55f5f;
+  font-style: italic;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+@media (min-width: 1000px) {
+  nav {
+    display: block !important;
   }
 }

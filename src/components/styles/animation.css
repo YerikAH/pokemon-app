@@ -1,0 +1,27 @@
+.loader-soon {
+  width: 100vw;
+  background: #ffffff;
+  height: 3px;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-name: load;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-timing-function: linear;
+}
+
+@keyframes load {
+  25% {
+    width: 75%;
+  }
+  50% {
+    width: 50%;
+  }
+  75% {
+    width: 25%;
+  }
+  100% {
+    width: 0%;
+  }
+}

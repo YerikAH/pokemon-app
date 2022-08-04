@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./styles/show.css";
 import "./styles/status.css";
 import Loader from "./Loader";
+
 function Main({
   setColor,
   setSecondColor,
@@ -18,10 +19,7 @@ function Main({
   const [pokemonShinyBack, setPokemonShinyBack] = useState("");
   const [pShinyFemale, setPShinyFemale] = useState("");
   const [pShinyFemaleBack, setPShinyFemaleBack] = useState("");
-  const [numOne, setNumOne] = useState(1);
-  const [action, setAction] = useState(false);
   const [duration, setDuration] = useState(true);
-
   const [name, setName] = useState("");
   const [descrip, setDescrip] = useState("");
   const [advice, setAdvice] = useState("");
@@ -34,37 +32,29 @@ function Main({
   const adviceColor = useRef();
   const cPower = useRef();
   const cPp = useRef();
+  const [search, setSearch] = useState(1);
 
-  let i = 0;
-  const [search, setSearch] = useState(25);
   async function getPokemon() {
     try {
       setDuration(false);
       let resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${search}`);
       let jsonp = await resp.json();
       let imagePokemon = jsonp.sprites;
-      /* get one */
       let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${search}`);
       let json = await res.json();
-      /* get two */
       let otherRes = await fetch(
         `https://pokeapi.co/api/v2/pokemon-species/${search}/`
       );
       let jsonOther = await otherRes.json();
-      /* get three */
       let twoRes = await fetch("https://api.adviceslip.com/advice");
       let jsonTwo = await twoRes.json();
-      /* get four */
       let fourRes = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${search}/encounters`
       );
       let jsonFour = await fourRes.json();
-      /*get five */
       let fiveRes = await fetch(`https://pokeapi.co/api/v2/move/${search}`);
       let jsonFive = await fiveRes.json();
-      /* catch err */
       if (!res.ok) throw { status: res.status, statusText: res.statusText };
-      /* pokemon name */
       let name = json.name;
       /* pokemon ID */
       let pokemonId = json.id;
@@ -121,6 +111,14 @@ function Main({
       setPShinyFemale(pShinyFemale);
       setPShinyFemaleBack(pShinyFemaleBack);
 
+      if (power > 100) {
+        power = 100;
+      }
+      if (pp > 100) {
+        pp = 100;
+      }
+      cPower.current.style.width = `${power}%`;
+      cPp.current.style.width = `${pp}%`;
       if (pokemonType == "water") {
         bg.current.style.background =
           "linear-gradient(181.09deg, #1B3051 2.02%, #272939 104.92%)";
@@ -262,36 +260,28 @@ function Main({
       setLoader(true);
       setDuration(true);
     } catch (error) {
-      console.log(error);
+      console.clear();
     }
   }
   async function getPokemonOther(arg) {
     try {
-      //error
-      setDuration(false);
       let resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${arg}`);
       let jsonp = await resp.json();
       let imagePokemon = jsonp.sprites;
-      /* get one */
       let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${arg}`);
       let json = await res.json();
-      /* get two */
       let otherRes = await fetch(
         `https://pokeapi.co/api/v2/pokemon-species/${arg}/`
       );
       let jsonOther = await otherRes.json();
-      /* get three */
       let twoRes = await fetch("https://api.adviceslip.com/advice");
       let jsonTwo = await twoRes.json();
-      /* get four */
       let fourRes = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${arg}/encounters`
       );
       let jsonFour = await fourRes.json();
-      /*get five */
       let fiveRes = await fetch(`https://pokeapi.co/api/v2/move/${arg}`);
       let jsonFive = await fiveRes.json();
-      /* catch err */
       if (!res.ok) throw { status: res.status, statusText: res.statusText };
       /* pokemon name */
       let name = json.name;
@@ -315,14 +305,18 @@ function Main({
       } else {
         locationPokemon = "unknown";
       }
-      /* pp */
-
-      let pp = jsonFive.pp;
-
-      /* power */
-
-      let power = jsonFive.power;
-
+      let pp;
+      let power;
+      if (!jsonFive) {
+        pp = "no found";
+        /* power */
+        power = "no found";
+      } else {
+        /* pp */
+        pp = jsonFive.pp;
+        /* power */
+        power = jsonFive.power;
+      }
       setPower(power);
       setPp(pp);
       setLocationPokemon(locationPokemon);
@@ -331,7 +325,6 @@ function Main({
       setName(name);
       setPokemonid(pokemonId);
       setAdvice(adviceTru);
-
       /* pokemon images*/
       let pokemonMale = imagePokemon.front_default;
       let pokemonMaleBack = imagePokemon.back_default;
@@ -349,7 +342,14 @@ function Main({
       setPokemonShinyBack(pokemonShinyBack);
       setPShinyFemale(pShinyFemale);
       setPShinyFemaleBack(pShinyFemaleBack);
-
+      if (power > 100) {
+        power = 100;
+      }
+      if (pp > 100) {
+        pp = 100;
+      }
+      cPower.current.style.width = `${power}%`;
+      cPp.current.style.width = `${pp}%`;
       if (pokemonType == "water") {
         bg.current.style.background =
           "linear-gradient(181.09deg, #1B3051 2.02%, #272939 104.92%)";
@@ -487,59 +487,61 @@ function Main({
         setColor("#535353");
         setSecondColor("#0A0D12");
       }
-
       setLoader(true);
-      setDuration(true);
+      setGetdata(false);
+      setSearch(searchPokemon);
     } catch (error) {
-      console.log(error);
+      console.clear();
+    } finally {
+      setDuration(true);
     }
   }
-
   useEffect(() => {
     getPokemon();
   }, []);
   if (getdata) {
     getPokemonOther(searchPokemon);
-    // setGetdata(false);
   }
-
   const handleClick = (e) => {
     let $selec = document.querySelector(".selector");
     let broSelec = $selec.nextElementSibling;
-    console.log(broSelec.tagName);
     if (broSelec.tagName != "BUTTON") {
       $selec.style.display = "none";
       broSelec.style.display = "block";
       $selec.classList.remove("selector");
       broSelec.classList.add("selector");
-    } else {
-      console.log("Holamundo");
     }
   };
-  const handleClickBack = () => {
+  const handleClickBack = (e) => {
     let $selec = document.querySelector(".selector");
     let broSelec = $selec.previousElementSibling;
-    console.log(broSelec.tagName);
     if (broSelec.tagName != "BUTTON") {
       $selec.style.display = "none";
       broSelec.style.display = "block";
       $selec.classList.remove("selector");
       broSelec.classList.add("selector");
-    } else {
-      console.log("Holamundo");
     }
   };
   const handleBackPokemon = (e) => {
     e.preventDefault();
-    setSearch(search - 1);
-    getPokemon();
+    if (search == 1) {
+      setSearch(search);
+      getPokemon();
+    } else {
+      setSearch(search - 1);
+      getPokemon();
+    }
   };
   const handleNextPokemon = (e) => {
     e.preventDefault();
-    setSearch(search + 1);
-    getPokemon();
+    if (search == 805) {
+      setSearch(search);
+      getPokemon();
+    } else {
+      setSearch(search + 1);
+      getPokemon();
+    }
   };
-
   return (
     <>
       <div className="content-grid" ref={bg}></div>
@@ -697,13 +699,14 @@ function Main({
               )}
               {loader && <p>{pokemonid}</p>}
               {loader && <p>{locationPokemon}</p>}
-              {/* {loader && <p>{pp}</p>}
-          {loader && <p>{power}</p>} */}
+
               <div className="status-power">
                 <div className="completed-power" ref={cPower}></div>
+                {loader && <p id="numberPower">{power}%</p>}
               </div>
               <div className="status-pp">
                 <div className="completed-pp" ref={cPp}></div>
+                {loader && <p id="numberPp">{pp}%</p>}
               </div>
             </div>
           </div>

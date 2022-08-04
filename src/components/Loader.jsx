@@ -5,7 +5,7 @@ const Loader = () => {
     width: "100vw",
     height: "100vh",
     position: "fixed",
-    zIndex: "900",
+    zIndex: "3000",
     display: "grid",
     background: "#121212",
     placeItems: "center",
