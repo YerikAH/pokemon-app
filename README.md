@@ -1,5 +1,8 @@
 # pokemon-app 
 It is an application developed in react, which makes many requests, I developed it with async/await, although there were some problems when trying to change the background but it was solved. On the other hand, it has some style flaws that I will fix soon, It was really amazing to develop this app, I will add more features as soon as I can.
+## API I use in the project
+1. [PokeAPI](https://pokeapi.co/)
+1. [Advice generator](https://api.adviceslip.com/)
 ## Development 🧱
 - You can see any pokemon, from anywhere and shiny pokemon are also integrated.
 - For each type of pokemon there is a specific type of color, that is, if the pokemon is a fire type, the background will be a little orange.
@@ -13,9 +16,5 @@ It is an application developed in react, which makes many requests, I developed 
 #### Dependencies
 1. gh-pages
 1. remove-scroll
-## API I use in the project
-PokeAPI 
-
 ## Demo 💻
-
-https://yerikah.github.io/my-task-app/public/#
+https://yerikah.github.io/pokemon-app/
