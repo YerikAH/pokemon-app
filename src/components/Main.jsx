@@ -606,55 +606,25 @@ function Main({
                 />
               )}
               {pokemonMakeBack && (
-                <img
-                  src={pokemonMakeBack}
-                  style={{ display: "none" }}
-                  alt=""
-                  className=""
-                />
+                <img src={pokemonMakeBack} style={{ display: "none" }} />
               )}
               {pokemonFemale && (
-                <img
-                  src={pokemonFemale}
-                  style={{ display: "none" }}
-                  alt=""
-                  className=""
-                />
+                <img src={pokemonFemale} style={{ display: "none" }} />
               )}
               {pokemonFemaleBack && (
-                <img
-                  src={pokemonFemaleBack}
-                  style={{ display: "none" }}
-                  alt=""
-                  className=""
-                />
+                <img src={pokemonFemaleBack} style={{ display: "none" }} />
               )}
               {pokemonShiny && (
-                <img
-                  src={pokemonShiny}
-                  style={{ display: "none" }}
-                  alt=""
-                  className=""
-                />
+                <img src={pokemonShiny} style={{ display: "none" }} />
               )}
               {pokemonShinyBack && (
-                <img
-                  src={pokemonShinyBack}
-                  style={{ display: "none" }}
-                  alt=""
-                  className=""
-                />
+                <img src={pokemonShinyBack} style={{ display: "none" }} />
               )}
               {pShinyFemale && (
-                <img src={pShinyFemale} style={{ display: "none" }} alt="" />
+                <img src={pShinyFemale} style={{ display: "none" }} />
               )}
               {pShinyFemaleBack && (
-                <img
-                  src={pShinyFemaleBack}
-                  style={{ display: "none" }}
-                  alt=""
-                  className=""
-                />
+                <img src={pShinyFemaleBack} style={{ display: "none" }} />
               )}
             </>
           )}

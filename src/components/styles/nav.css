@@ -28,12 +28,12 @@ nav {
   width: 100%;
   border-radius: 10px;
   border: none;
-  padding: 1rem 2.5rem;
+  padding: 0.5rem 2.5rem;
   background: #212121;
   color: #777373;
   font-style: italic;
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 0.7rem;
   line-height: 14px;
   letter-spacing: 0.1em;
   outline: none;
@@ -45,73 +45,70 @@ form .searchp {
   width: 100%;
   border-radius: 10px;
   border: none;
-  padding: 1rem 2.5rem;
+  padding: 0.5rem 2.5rem;
   font-style: italic;
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 0.7rem;
   line-height: 14px;
   letter-spacing: 0.1em;
-  margin-top: 2rem;
-  color: #ffffff;
+  margin-top: 1.5rem;
+  color: #fff;
   transition: 0.3s;
   cursor: pointer;
+  outline: none;
 }
 form .searchp:hover {
   filter: saturate(4);
 }
 .options-more {
   padding: 0 2rem;
+  margin-bottom: 4rem;
 }
 .options-more a {
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 0.8rem;
   line-height: 14px;
   letter-spacing: 0.1em;
-  color: #cccccc;
+  color: #c4c4c4;
   text-decoration: none;
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: block;
 }
 .options-more p {
   font-weight: 500;
-  font-size: 16px;
-  line-height: 14px;
+  font-size: 0.7rem;
+  line-height: 1rem;
   letter-spacing: 0.1em;
-  color: #8b8b8b;
-  margin-top: 1rem;
+  color: #626262;
+  margin-top: 0.5rem;
 }
 .options-more h3 {
-  font-style: italic;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 18px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 1rem;
+  font-size: 0.9rem;
+  line-height: 27px;
   letter-spacing: 0.1em;
-  color: #dddddd;
+  color: #c4c4c4;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #c4c4c4;
 }
 .footer-nav {
-  position: absolute;
-  bottom: 0;
-  width: 500px;
+  width: 380px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  margin-top: auto;
 }
 .social-media a {
   margin-left: 1rem;
 }
 .footer-nav span {
-  color: #ffffff;
+  color: #fff;
   font-weight: 400;
   letter-spacing: 0.1em;
   margin: 1rem 0;
-}
-@media (min-width: 1600px) {
-  .footer-nav {
-    position: fixed;
-  }
+  font-size: 0.7rem;
 }
 @media (max-width: 1000px) {
   nav {
@@ -174,6 +171,9 @@ form .searchp:hover {
 }
 @media (min-width: 1000px) {
   nav {
-    display: block !important;
+    display: flex !important;
+    height: 100vh;
+    position: relative;
+    flex-direction: column;
   }
 }

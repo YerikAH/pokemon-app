@@ -87,7 +87,7 @@ function Nav({ color, secondColor, setSearchPokemon, setGetdata }) {
       <nav>
         <div className="logo-img">
           <svg
-            width="148"
+            width="100"
             height="54"
             viewBox="0 0 148 54"
             fill="none"
